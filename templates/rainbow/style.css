@@ -1,0 +1,6 @@
+body, body#admin {
+	background-image: url(images/bg.jpeg);
+}
+.headpicture {
+	background-image: url(images/headpicture.jpeg) !important;
+}

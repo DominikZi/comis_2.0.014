@@ -1,0 +1,1 @@
+<noscript><h1 style="position:fixed;top:33%;left:33%;height:33%;width:33%;z-index:99999999999999999999999999999999999999999;color:red;background:white;padding:50px;border:3px solid red;"><br><br><br><center>NoScript bitte deaktivieren.</h1></noscript>

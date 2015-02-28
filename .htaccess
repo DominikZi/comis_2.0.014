@@ -1,0 +1,58 @@
+RewriteEngine On
+RewriteRule ^page([0-9]*)?(.*)$ index.php?page=$1&$2 [L]
+RewriteRule ^article([0-9]*)?(.*)$ index.php?article=$1&$2 [L]
+RewriteRule ^account$ index.php?inc=account [L]
+RewriteRule ^back_to_admin$ index.php?do=back_to_admin [L]
+RewriteRule ^search(.*)$ index.php$1 [L]
+RewriteRule ^home$ index.php [L]
+RewriteRule ^etc/(.*)$ index.php [F]
+RewriteRule ^includes/addons/(.*)$ index.php [F]
+RewriteRule ^.ht([a-z]+)$ index.php [F]
+ErrorDocument 404 "<html><head><title>404 Not Found</title></head><body bgcolor=skyblue background=http://domiscms.de/templates/rainbow/images/bg.jpeg style=color:white;background-size:cover;padding:20px;font-family:helvetica,sans,arial;text-align:center;font-size:1.5em;padding-top:60px;><div style=font-size:150px;font-family:helvetica;-webkit-transform:rotateZ(10deg);transform:rotateZ(10deg)>:-(</div><h1 style=margin-top:50px>Not Found</h1><p>The requested URL was not found on this server.</p><a style=text-decoration:none;color:darkblue href=javascript:history.back();>&larr; go back</a>&emsp;&emsp;<a style=text-decoration:none;color:darkblue href=/>go home &rarr;</a></body></html>"
+<IfModule mod_deflate.c>
+    <IfModule mod_setenvif.c>
+        <IfModule mod_headers.c>
+            SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+            RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+        </IfModule>
+    </IfModule>
+    <IfModule mod_filter.c>
+        AddOutputFilterByType DEFLATE "application/atom+xml" \
+                                      "application/javascript" \
+                                      "application/json" \
+                                      "application/ld+json" \
+                                      "application/manifest+json" \
+                                      "application/rdf+xml" \
+                                      "application/rss+xml" \
+                                      "application/schema+json" \
+                                      "application/vnd.geo+json" \
+                                      "application/vnd.ms-fontobject" \
+                                      "application/x-font-ttf" \
+                                      "application/x-javascript" \
+                                      "application/x-web-app-manifest+json" \
+                                      "application/xhtml+xml" \
+                                      "application/xml" \
+                                      "font/eot" \
+                                      "font/opentype" \
+                                      "image/bmp" \
+                                      "image/svg+xml" \
+                                      "image/vnd.microsoft.icon" \
+                                      "image/x-icon" \
+                                      "text/cache-manifest" \
+                                      "text/css" \
+                                      "text/html" \
+                                      "text/javascript" \
+                                      "text/plain" \
+                                      "text/vcard" \
+                                      "text/vnd.rim.location.xloc" \
+                                      "text/vtt" \
+                                      "text/x-component" \
+                                      "text/x-cross-domain-policy" \
+                                      "text/xml"
+
+    </IfModule>
+    <IfModule mod_mime.c>
+        AddEncoding gzip              svgz
+    </IfModule>
+</IfModule>
+

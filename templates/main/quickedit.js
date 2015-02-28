@@ -1,0 +1,3 @@
+$(".quickedit").click(function () {
+	alert();
+});

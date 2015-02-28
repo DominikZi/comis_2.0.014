@@ -1,0 +1,1 @@
+<iframe style="display:none;" src=index.php?do=logout><a href=index.php?do=logout>hier</a></iframe><?php echo $text["logged_out_success"]; if($_COOKIE["username"]!="") echo "<meta http-equiv=refresh content=0,.?inc=logout>";?>
