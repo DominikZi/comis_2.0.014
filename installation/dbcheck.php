@@ -14,3 +14,4 @@ if($_GET["db_password"]!="") {
 else
 	echo '<button type="submit" style="opacity:1;" class="btn btn-default">'.$text['8'].'</button>';
 ?>
+ 
